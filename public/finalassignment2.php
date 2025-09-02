@@ -150,7 +150,8 @@ function resizeImageToMaxSize(file, maxMB) {
 <?php foreach($select_sth as $entry): ?>
   <dl style="margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc;">
     <dt>ID</dt>
-    <a href="./enshu1_view.php?id=<?= $entry['id'] ?>"><?= $entry['id'] ?></a>
+    <a href="#post-<?= htmlspecialchars($entry['id']) ?>"><?= htmlspecialchars($entry['id']) ?></a>
+    <a href="./enshu1_view.php?id=<?= htmlspecialchars($entry['id']) ?>">詳細</a>
     <dt>日時</dt>
     <dd><?= $entry['created_at'] ?></dd>
     <dt>内容</dt>
