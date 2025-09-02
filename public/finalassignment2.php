@@ -8,7 +8,7 @@ if (isset($_POST['body'])) {
     // 画像であるか確認
     if (preg_match('/^image\//', $_FILES['image']['type']) !== 1) {
       header("HTTP/1.1 302 Found");
-      header("Location: ./bbsimagetest.php");
+      header("Location: ./finalassignment2.php");
       return;
     }
 
@@ -35,7 +35,7 @@ if (isset($_POST['body'])) {
 
   // リダイレクト
   header("HTTP/1.1 302 Found");
-  header("Location: ./bbsimagetest2.php");
+  header("Location: ./bbsimagetest.php");
   return;
 }
 
@@ -44,7 +44,7 @@ $select_sth = $dbh->prepare('SELECT * FROM bbs_entries ORDER BY created_at DESC'
 $select_sth->execute();
 ?>
 
-<form method="POST" action="./bbsimagetest.php" enctype="multipart/form-data">
+<form method="POST" action="./finalassignment2.php" enctype="multipart/form-data">
   <textarea name="body" required></textarea>
   <div style="margin: 1em 0;">
     <input type="file" accept="image/*" name="image">
