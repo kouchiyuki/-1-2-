@@ -10,7 +10,7 @@ if (isset($_POST['body'])) {
     if (preg_match('/^image\//', mime_content_type($_FILES['image']['tmp_name'])) !== 1) {
       // アップロードされたものが画像ではなかった場合
       header("HTTP/1.1 302 Found");
-      header("Location: ./bbsimagetest.php");
+      header("Location: ./finalassignment2.php");
     }
 
     // 元のファイル名から拡張子を取得
@@ -32,7 +32,7 @@ if (isset($_POST['body'])) {
   // 処理が終わったらリダイレクトする
   // リダイレクトしないと，リロード時にまた同じ内容でPOSTすることになる
   header("HTTP/1.1 302 Found");
-  header("Location: ./bbsimagetest.php");
+  header("Location: ./finalassignment2.php");
   return;
 }
 
@@ -55,7 +55,7 @@ $select_sth->execute();
 <?php foreach($select_sth as $entry): ?>
   <dl style="margin-bottom: 1em; padding-bottom: 1em; border-bottom: 1px solid #ccc;">
     <dt>ID</dt>
-    <dd><?= $entry['id'] ?></dd>
+    <dd><a href="#post-<?= htmlspecialchars($entry['id']) ?>"><?= htmlspecialchars($entry['id']) ?></a></dd>
     <dt>日時</dt>
     <dd><?= $entry['created_at'] ?></dd>
     <dt>内容</dt>
