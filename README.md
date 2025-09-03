@@ -56,7 +56,7 @@ docker-compose exec mysql2 mysql -u root -pexample_password example_db -e "CREAT
 │   │   ├── bbsimagetest.php
 │   ├── nginx/
 │   │   └── conf.d
- |     |        └── default.conf
+|   |    　　└── default.conf
 │   ├── Dockerfile
 │   └── compose.yml
 └── README.md
