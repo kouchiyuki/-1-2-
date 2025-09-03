@@ -45,3 +45,18 @@ docker-compose up -d --build
 docker-compose exec mysql2 mysql -u root -pexample_password example_db -e "CREATE TABLE IF NOT EXISTS bbs_entries (id INT AUTO_INCREMENT PRIMARY KEY, body TEXT NOT NULL, image_filename VARCHAR(255), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
 
 #すべてのセットアップが完了したら、ブラウザでhttp://<EC2インスタンスのパブリックIP>にアクセスして、掲示板の画面が表示されることを確認してください。
+
+
+#ファイル構成
+.
+├── -1-2-/
+│   ├── public/
+│   │   ├── finalassignment2.php
+│   │   ├── enshu1_view.php
+│   │   ├── bbsimagetest.php
+│   ├── nginx/
+│   │   └── conf.d
+ |     |        └── default.conf
+│   ├── Dockerfile
+│   └── compose.yml
+└── README.md
