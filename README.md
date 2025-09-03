@@ -41,6 +41,7 @@ cd -1-2-/public
 docker-compose up -d --build
 
 # MySQLコンテナに接続し、`bbs_entries`テーブルを作成
+※【重要】私が作成したものはmys1l2と名前を付けています。ファイルをいちいち変更する必要がございます！！！
 docker-compose exec db mysql -u root -pexample_password example_db -e "CREATE TABLE IF NOT EXISTS bbs_entries (id INT AUTO_INCREMENT PRIMARY KEY, body TEXT NOT NULL, image_filename VARCHAR(255), created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
 
 #すべてのセットアップが完了したら、ブラウザでhttp://<EC2インスタンスのパブリックIP>にアクセスして、掲示板の画面が表示されることを確認してください。
